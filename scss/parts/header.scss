@@ -1,0 +1,210 @@
+$main-blue-478-bf-9:#478BF9;
+$main-navy-blue-110-a-1-d: #110A1D;
+$main-clean-white-ffffff:#FFF;
+$additional-purple-9-dadf-2: #9DADF2;
+$main-deep-blue-1-e-1231: #1E1231;
+
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header {
+    box-shadow: 0px 4px 21px -1px rgba(34, 60, 80, 0.13);
+    border-radius: 4vw;
+    border: 4px solid $main-blue-478-bf-9;
+    background: $main-navy-blue-110-a-1-d;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+width: 90%;
+margin: auto;
+padding: 1.5vw 3vw;
+}
+
+#rightButton{
+    margin-left: 3vw;
+}
+
+.header__burger-btn {
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    z-index: 2;
+}
+
+.header__burger-btn span {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    left: 5px;
+    transition: transform .5s, opacity .5s, background-color .5s;
+}
+
+.header__burger-btn span:nth-child(1) {
+    transform: translateY(-10px);
+}
+
+.header__burger-btn span:nth-child(3) {
+    transform: translateY(10px);
+}
+
+.header.open .header__burger-btn span {
+    background-color: white;
+}
+
+.header.open .header__burger-btn span:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+}
+
+.header.open .header__burger-btn span:nth-child(2) {
+    opacity: 0;
+}
+
+.header.open .header__burger-btn span:nth-child(3) {
+    transform: translateY(0) rotate(-45deg);
+}
+
+.logo {
+    display: block;
+}
+
+.logo__img {
+    width: 100%;
+}
+.menu{
+    margin-left: 3vw;
+    display: flex;
+    align-items: center;
+}
+.menu__list {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    gap: 2vw;
+}
+
+#sighUp{
+    background-color: $main-blue-478-bf-9;
+    border: 2px solid $main-blue-478-bf-9;
+}
+
+.menu__item{
+color: $main-clean-white-ffffff;
+/* Buttons/Btn. Sec */
+font-family: Lexend;
+font-style: normal;
+font-weight: 400;
+font-size: 1.2vw;
+white-space: nowrap;
+}
+.rightLinks{
+    display: flex;
+padding: 0.5vw 0.8vw;
+align-items: center;
+gap: 0.5vw;
+white-space: nowrap;
+border-radius: 1.5vw;
+border: 2px solid $additional-purple-9-dadf-2;
+background: $main-navy-blue-110-a-1-d;
+//
+color: $main-clean-white-ffffff;
+text-align: center;
+
+/* Buttons/Btn. Sec */
+font-family: Lexend;
+font-size: 1.2vw;
+font-style: normal;
+font-weight: 400;
+}
+
+
+@media (max-width: 480px) {
+    .header.open{
+        z-index: 2;
+    }
+    .header__burger-btn {
+        display: block;
+    }
+    .logo {
+        display: none;
+    }
+    .menu__item{
+        white-space: nowrap;
+margin: auto;
+        }
+    .menu {
+        margin-left: 0;
+        z-index: 1;
+        position: absolute;
+        left: 0px;
+        top: 0;
+        width: 100%;
+        background-color: #110A1D;
+        padding: 20vw 6vw;
+        transition: transform .5s;
+    }
+    .menu__list {
+        display: block;
+        margin: auto;
+        width: 100%;
+    }
+    .menu__link {
+        margin-top: 2vw;
+        color: white;
+        font-size: 6vw;
+        display: block;
+        border-radius: 1.75vw;
+        border: 2px solid  #478BF9;
+        display: flex;
+padding: 3vw 5vw;
+align-items: center;
+gap: 0.5vw;
+border-radius: 10vw;
+border: 2px solid $main-blue-478-bf-9;
+background: $main-navy-blue-110-a-1-d;
+    }
+    .rightLinks{
+        margin-top: 2vw;
+        color: white;
+        font-size: 6vw;
+        display: block;
+        border-radius: 1.75vw;
+        border: 2px solid  #478BF9;
+        padding: 3vw 5vw;
+text-align: center;
+border-radius: 10vw;
+border: 2px solid $main-blue-478-bf-9;
+background: $main-navy-blue-110-a-1-d;
+    }
+    #rightButton{
+    margin-left: 0px;
+    margin-top: 10vw;
+}
+#logIn{
+    border: 2px solid $additional-purple-9-dadf-2;
+    background: $main-deep-blue-1-e-1231;
+}
+#planet{
+    display: none;
+}
+    .header.open .menu {
+        transform: translateX(100%);
+    }
+
+}
